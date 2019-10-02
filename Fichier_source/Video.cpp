@@ -1,7 +1,5 @@
 #include "Video.h"
 
-
-
 Video::Video()
 {
 	pGraph = NULL;
@@ -28,45 +26,41 @@ Video::Video()
 	mEtat = pGraph->QueryInterface(IID_IMediaControl, (void **)&pControl);
 	mEtat = pGraph->QueryInterface(IID_IMediaEvent, (void **)&pEvent);
 	mEtat = pGraph->QueryInterface(IID_IMediaSeeking, (void **)&pSeeking);
-
-
 }
-
 
 Video::~Video()
 {
 }
 
-HRESULT Video::playPause()
+HRESULT Video::jouerArreter()
 {
 
-	if(SUCCEEDED(mEtat))
+	if (SUCCEEDED(mEtat))
 	{
-		if(actif)
+		if (actif)
 		{
 			mEtat = pControl->Run();
 			actif = 0;
-		
+
 		}
 		else
 		{
-		
-		mEtat = pControl->Pause();
-		actif = 1;
+
+			mEtat = pControl->Pause();
+			actif = 1;
 		}
-	
+
 	}
-	
+
 	return mEtat;
 }
-
 
 
 HRESULT Video::avanceRapide()
 {
 	if (vitesse)
 	{
-		mEtat= pSeeking->SetRate(1.0);
+		mEtat = pSeeking->SetRate(1.0);
 		vitesse = 0;
 	}
 	else {
@@ -83,7 +77,7 @@ HRESULT Video::retourDepart()
 	{
 
 		REFERENCE_TIME rtNow = 0,
-			
+
 			mEtat = pSeeking->SetPositions(
 				&rtNow, AM_SEEKING_AbsolutePositioning,
 				NULL, AM_SEEKING_NoPositioning
@@ -99,14 +93,13 @@ HRESULT Video::Arret()
 }
 
 
-
-
-HRESULT Video::open(std::string nomVideo)
+HRESULT Video::ouvrir(std::string nomVideo)
 {
 	std::wstring stemp = s2ws(nomVideo);
 	LPCWSTR result = stemp.c_str();
 	//std::cout << getEtat();
 	mEtat = pGraph->RenderFile(stemp.c_str(), NULL);
+	pControl->Pause();
 	return mEtat;
 }
 
