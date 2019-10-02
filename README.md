@@ -15,6 +15,6 @@ Voir le code source
 --------------------
 De plus, le code qui a été compiler se retrouve dans le fichier Projet_code.
 
-Code compilé sur visual studio 2017
+Code non compilé sur visual studio 2017
 ------------------------------
 Finalement, pour plus d'information, on peut utiliser le fichier Fichier_compiler pour avoir la dossier de compilation complet sur visual studio.
