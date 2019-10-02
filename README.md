@@ -1,9 +1,9 @@
 Conception d'un module pour Python (3.7.4) en C/C++
 -------------------------------------------
 Réalisé par:
--Karen Simard-noreau
--Johan Sintondji
--Malek Khattech
+- Karen Simard-noreau
+- Johan Sintondji
+- Malek Khattech
 
 Lancer le programme 
 --------------------
