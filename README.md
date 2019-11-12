@@ -7,8 +7,8 @@ Réalisé par:
 
 Lancer le programme 
 --------------------
-1-Ouvrir le logiciel visual studio 2017
-2-Créer un nouveau projet 
+1. Ouvrir le logiciel visual studio 2017
+2. Créer un nouveau projet 
 3-Ajouter video.cpp,video.h et main.cpp dans le projet qui a été créer 
 4-Déplacer la vidéo "rue.avi" dans le répertoire du projet 
 5-Telecharger et installer python 3.7.4 
